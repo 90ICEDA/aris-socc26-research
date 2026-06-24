@@ -1,0 +1,13 @@
+﻿track_id: T13
+track_name: cloudops_replay_guard
+paper_target: SoCC 2026
+paper_role: vision_or_short
+status: scaffolded
+fabricated_results: false
+main_question: >
+  Can replay sandboxing and contract checking prevent unsafe LLM-generated
+  cloud operation actions before execution?
+required_outputs:
+  - results/smoke/t13_contract_gate_table.csv
+  - refine-logs/socc26/T13_AGENT_SAFETY_TAXONOMY.md
+  - figures/t13_replay_guard_pipeline.png

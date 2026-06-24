@@ -1,0 +1,14 @@
+﻿track_id: T11
+track_name: llm_cache_isolation
+paper_target: SoCC 2026
+paper_role: primary_research
+status: scaffolded
+fabricated_results: false
+main_question: >
+  Does prefix/KV-cache reuse in multi-tenant LLM serving create measurable
+  privacy/performance tradeoffs, and can tenant-aware cache policies reduce leakage?
+required_outputs:
+  - results/smoke/t11_smoke_latency.jsonl
+  - results/sweeps/t11_prefix_overlap_sweep.csv
+  - figures/t11_ttft_overlap_boxplot.png
+  - refine-logs/socc26/T11_GO_NOGO.md

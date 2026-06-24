@@ -1,0 +1,14 @@
+﻿track_id: T12
+track_name: llm_batch_fairness
+paper_target: SoCC 2026
+paper_role: secondary_research
+status: scaffolded
+fabricated_results: false
+main_question: >
+  Can strategic tenants exploit continuous batching to degrade victim SLOs,
+  and can tenant-aware admission or token-time budgeting improve robustness?
+required_outputs:
+  - results/smoke/t12_victim_slo_under_burst.csv
+  - results/sweeps/t12_adv_load_sweep.csv
+  - figures/t12_slo_violation_vs_adv_load.png
+  - refine-logs/socc26/T12_GO_NOGO.md

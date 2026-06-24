@@ -1,0 +1,26 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ARIS Run Manifest",
+  "type": "object",
+  "required": [
+    "track_id",
+    "run_id",
+    "git_commit",
+    "timestamp",
+    "fabricated_results",
+    "command"
+  ],
+  "properties": {
+    "track_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "git_commit": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "device": { "type": "string" },
+    "engine": { "type": "string" },
+    "model": { "type": "string" },
+    "workload": { "type": "string" },
+    "fabricated_results": { "type": "boolean" },
+    "command": { "type": "string" },
+    "metrics": { "type": "object" }
+  }
+}
