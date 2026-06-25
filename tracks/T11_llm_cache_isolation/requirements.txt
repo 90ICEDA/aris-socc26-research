@@ -1,0 +1,11 @@
+# T11 LLM cache isolation smoke workload requirements
+
+# Core dependencies
+requests>=2.31.0
+
+# Optional plotting
+matplotlib>=3.7.0
+
+# Optional: if you want to run vLLM server locally
+# vllm>=0.4.0  # Requires CUDA-capable GPU
+# sglang>=0.2.0  # Alternative engine
