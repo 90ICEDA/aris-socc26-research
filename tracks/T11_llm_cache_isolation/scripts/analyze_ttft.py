@@ -166,7 +166,7 @@ def maybe_plot(rows: List[Dict[str, Any]], out_png: Path) -> None:
 
     out_png.parent.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(7, 4))
-    plt.boxplot(data, labels=labels, showmeans=True)
+    plt.boxplot(data, tick_labels=labels, showmeans=True)
     plt.ylabel("TTFT (ms)")
     plt.title("T11 Prefix-overlap smoke TTFT")
     plt.tight_layout()
