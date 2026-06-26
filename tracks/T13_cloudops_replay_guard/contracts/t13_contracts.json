@@ -1,0 +1,11 @@
+﻿{
+  "contract_set_id": "T13_baseline_contracts_v0",
+  "contracts": {
+    "rollback_required_for_mutation": true,
+    "critical_service_min_replicas": 2,
+    "max_blast_radius_namespaces": 1,
+    "deny_delete_default_deny_network_policy": true,
+    "deny_delete_resource_quota": true,
+    "deny_gpu_eviction_without_pdb": true
+  }
+}
