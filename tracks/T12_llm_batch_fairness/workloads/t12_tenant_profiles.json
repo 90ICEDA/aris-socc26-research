@@ -1,0 +1,55 @@
+﻿{
+  "track_id": "T12",
+  "profile_set_id": "t12_batch_fairness_profiles_v0",
+  "fabricated_results": false,
+  "synthetic_workload": true,
+  "description": "Offline simulator profiles for multi-tenant LLM serving batching fairness and SLO robustness.",
+  "victim": {
+    "tenant_id": "victim",
+    "arrival_rate_rps": 2.0,
+    "prompt_tokens_mean": 96,
+    "prompt_tokens_jitter": 24,
+    "output_tokens_mean": 64,
+    "output_tokens_jitter": 16,
+    "ttft_slo_ms": 800,
+    "priority": "latency_sensitive"
+  },
+  "adversaries": {
+    "long_prompt": {
+      "tenant_id": "adv_long_prompt",
+      "prompt_tokens_mean": 1536,
+      "prompt_tokens_jitter": 384,
+      "output_tokens_mean": 48,
+      "output_tokens_jitter": 12,
+      "ttft_slo_ms": 5000,
+      "attack_type": "long_prompt_prefill_pressure"
+    },
+    "long_decode": {
+      "tenant_id": "adv_long_decode",
+      "prompt_tokens_mean": 128,
+      "prompt_tokens_jitter": 32,
+      "output_tokens_mean": 512,
+      "output_tokens_jitter": 128,
+      "ttft_slo_ms": 5000,
+      "attack_type": "long_decode_slot_occupancy"
+    },
+    "burst": {
+      "tenant_id": "adv_burst",
+      "prompt_tokens_mean": 384,
+      "prompt_tokens_jitter": 96,
+      "output_tokens_mean": 192,
+      "output_tokens_jitter": 48,
+      "ttft_slo_ms": 5000,
+      "attack_type": "bursty_arrival_pressure"
+    }
+  },
+  "simulator": {
+    "duration_s": 60,
+    "seed": 20260626,
+    "max_active_sequences": 8,
+    "prefill_base_ms": 8.0,
+    "prefill_ms_per_token": 0.035,
+    "decode_base_ms": 5.0,
+    "decode_ms_per_active_sequence": 0.8
+  }
+}
