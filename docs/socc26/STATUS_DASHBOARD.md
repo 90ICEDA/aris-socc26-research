@@ -10,7 +10,7 @@ Tag: socc26-three-track-offline-v0
 |---|---|---|---|---|
 | T11 | Prefix/KV cache isolation | dry-run pipeline + low-memory vLLM probe | waiting for free GPU | run real vLLM smoke when VRAM is available |
 | T12 | Continuous batching fairness / SLO robustness | offline batching simulator + three plots | offline smoke done | inspect trends, then port workload to real vLLM/SGLang |
-| T13 | Replay-gated CloudOps agent | offline contract checker + gate table | offline smoke done | add minikube/k3s replay |
+| T13 | Replay-gated CloudOps agent | offline checker + real kind/kubectl replay smoke | k8s replay smoke done | add unsafe-action ablation and recovery-time metric |
 
 ## Submission framing
 
