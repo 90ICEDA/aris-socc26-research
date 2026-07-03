@@ -46,3 +46,25 @@ This confirms that the T11 pipeline has moved from dry-run to real vLLM evidence
 
 Next:
 Run a larger controlled T11 experiment with more repetitions, more overlap levels, and randomized request order.
+
+## T11 Real vLLM Checkpoint - RTX 4060 Low-Memory Smoke
+
+Status: DONE.
+
+Evidence:
+- Real vLLM server successfully launched on RTX 4060 Laptop GPU.
+- Model: Qwen/Qwen2.5-0.5B-Instruct.
+- vLLM version: 0.6.6.post1.
+- Prefix caching enabled.
+- Workload: t11_prefix_smoke_4060_lowmem.jsonl.
+- Result: overlap_100 has lower mean TTFT than overlap_0.
+- overlap_0 mean TTFT: 40.49 ms.
+- overlap_100 mean TTFT: 35.02 ms.
+- Observed GPU prefix cache hit rate: 78.39%.
+- Output note: refine-logs/socc26/T11_REAL_4060_LOWMEM_GO_NOGO.md.
+
+Interpretation:
+This confirms that the T11 pipeline has moved from dry-run to real vLLM evidence. The result is still a low-memory smoke test, not the final evaluation, but it validates the measurement harness and prefix-cache effect.
+
+Next:
+Run a larger controlled T11 experiment with more repetitions, more overlap levels, and randomized request order.
