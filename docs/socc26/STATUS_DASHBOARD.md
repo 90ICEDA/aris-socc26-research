@@ -68,3 +68,30 @@ This confirms that the T11 pipeline has moved from dry-run to real vLLM evidence
 
 Next:
 Run a larger controlled T11 experiment with more repetitions, more overlap levels, and randomized request order.
+
+## T11 Prefix-Overlap V2 Checkpoint - RTX 4060 Low-Memory
+
+Status: DONE.
+
+Experiment:
+- Real vLLM server.
+- Model: Qwen/Qwen2.5-0.5B-Instruct.
+- GPU: RTX 4060 Laptop 8GB.
+- Prefix caching enabled.
+- Overlap levels: 0 / 25 / 50 / 75 / 100.
+- Requests: 30 per level, randomized order.
+- Analyzer skips warmup, request-error rows, and timeout-induced TTFT outliers.
+
+Main result:
+- overlap_0 mean TTFT: 54.87 ms.
+- overlap_25 mean TTFT: 54.37 ms.
+- overlap_50 mean TTFT: 52.09 ms.
+- overlap_75 mean TTFT: 47.36 ms.
+- overlap_100 mean TTFT: 46.61 ms.
+- overlap_100 improves over overlap_0 by about 8.26 ms, or 15.1%.
+
+Interpretation:
+This controlled low-memory smoke confirms that higher prefix overlap reduces TTFT under real vLLM serving. This is now usable evidence for the T11 prefix-cache isolation/leakage paper direction.
+
+Caveat:
+This is still a single-GPU low-memory smoke, not final SoCC-scale evaluation.
